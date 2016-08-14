@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Clan_System.Tables
 {
-    internal class Players
+    public class Players
     {
         private static int _id;
 
         private readonly HashSet<Player> _content;
 
-        internal HashSet<Player> Content
+        public HashSet<Player> Content
         {
             get
             {

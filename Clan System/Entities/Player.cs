@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Clan_System
 {
-    internal class Player
+    public class Player
     {
         private readonly int _id;
         private readonly string _name;

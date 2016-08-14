@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Clan_System.Tables
 {
-    internal class ClanPlayers
+    public class ClanPlayers
     {
         private readonly HashSet<ClanPlayer> _content;
 
-        internal HashSet<ClanPlayer> Content
+        public HashSet<ClanPlayer> Content
         {
             get
             {

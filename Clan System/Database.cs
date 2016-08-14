@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Clan_System.Tables;
+using NUnit.Framework;
 
 namespace Clan_System
 {
-    internal class Database
+    public class Database
     {
         private readonly Clans _clanTable;
         private readonly Players _playerTable;
         private readonly ClanPlayers _clanPlayerTable;
 
-        internal Clans ClanTable
+        public Clans ClanTable
         {
             get
             {
@@ -21,7 +22,7 @@ namespace Clan_System
             }
         }
 
-        internal Players PlayerTable
+        public Players PlayerTable
         {
             get
             {
@@ -29,7 +30,7 @@ namespace Clan_System
             }
         }
 
-        internal ClanPlayers ClanPlayerTable
+        public ClanPlayers ClanPlayerTable
         {
             get
             {
@@ -44,7 +45,7 @@ namespace Clan_System
             _clanPlayerTable = new ClanPlayers();
         }
 
-        public void CreatePlayer(string name)
+        public Player CreatePlayer(string name)
         {
             if (PlayerTable.Content.Any(x => x.Name == name))
             {
@@ -52,11 +53,13 @@ namespace Clan_System
             }
             else
             {
-                PlayerTable.Content.Add(new Player(Players.GetNewId(), name));
+                var player = new Player(Players.GetNewId(), name);
+                PlayerTable.Content.Add(player);
+                return player;
             }
         }
 
-        public void CreateClan(string name, string flag)
+        public Clan CreateClan(string name, string flag)
         {
             if (ClanTable.Content.Any(x => x.Name == name))
             {
@@ -64,7 +67,9 @@ namespace Clan_System
             }
             else
             {
-                ClanTable.Content.Add(new Clan(Clans.GetNewId(), flag, name));
+                var clan = new Clan(Clans.GetNewId(), flag, name);
+                ClanTable.Content.Add(clan);
+                return clan;
             }
         }
 
