@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Clan_System.Tables
 {
-    class Players
+    internal class Players
     {
-        private static readonly int _id = 0;
+        private static int _id;
 
         private readonly HashSet<Player> _content;
 
@@ -23,5 +23,10 @@ namespace Clan_System.Tables
         static Players() { _id = 0; }
 
         public Players() { _content = new HashSet<Player>(); }
+
+        public static int GetNewId()
+        {
+            return _id++;
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace Clan_System
     {
         private readonly int _clanId;
         private readonly int _playerId;
-        private readonly int _role;
+        private readonly string _role;
 
         public int ClanId
         {
@@ -28,12 +28,20 @@ namespace Clan_System
             }
         }
 
-        public int Role
+        public string Role
         {
             get
             {
                 return _role;
             }
         }
+
+        public ClanPlayer(int _clanId, int _playerId, string _role)
+        {
+            this._clanId = _clanId;
+            this._playerId = _playerId;
+            this._role = _role;
+        }
+
     }
 }

@@ -8,7 +8,7 @@ namespace Clan_System.Tables
 {
     internal class Clans
     {
-        private static readonly int _id = 0;
+        private static int _id;
 
         private readonly HashSet<Clan> _content;
 
@@ -23,5 +23,10 @@ namespace Clan_System.Tables
         static Clans() { _id = 0; }
 
         public Clans() { _content = new HashSet<Clan>(); }
+
+        public static int GetNewId()
+        {
+            return _id++;
+        }
     }
 }

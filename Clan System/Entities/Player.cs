@@ -26,5 +26,11 @@ namespace Clan_System
                 return _name;
             }
         }
+
+        public Player(int _id, string _name)
+        {
+            this._id = _id;
+            this._name = _name;
+        }
     }
 }
